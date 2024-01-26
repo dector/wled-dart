@@ -1,13 +1,22 @@
 # WLED API for Dart
 
-:construction: Heavily WIP.
+![Pub Version](https://img.shields.io/pub/v/wled)
+
+🚧 **ATTENTION!** Current version is totally usable but API might change multiple times before the 1.0 release. 🚧
+
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md).
+
 
 ## Usage
 
 ``` dart
 // Will be resolved to `http://localhost`.
-// Alternatively you can use IP address.
 final wled = Wled('localhost');
+// or
+final wled = Wled('127.0.0.1')
 
 await wled.toggle();
 ```
