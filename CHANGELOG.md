@@ -1,4 +1,4 @@
-## 0.0.1 (SNAPSHOT)
+## 0.0.1
 
 New:
     - WLED API Controller.
