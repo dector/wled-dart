@@ -20,3 +20,31 @@ final wled = Wled('127.0.0.1')
 
 await wled.toggle();
 ```
+
+## Operations
+
+- [x] Turn On.
+- [x] Turn Off.
+- [x] Toggle.
+- [ ] Brightness.
+- [ ] Change color.
+- [ ] Effects.
+- [ ] Palette.
+- [ ] Nightlight.
+- [ ] Advances: primary/secondary/third color.
+- [ ] Advances: hue/saturation.
+- [ ] Notifications.
+- [ ] Presets.
+- [ ] Macros.
+- [ ] Segments.
+- [ ] Reboot.
+- [ ] Current/countdown time.
+- [ ] Color slider mode.
+- [ ] Debug IO.
+- [ ] Internal mode.
+- [ ] Lock.
+- [ ] Experimental.
+- [ ] Cronixie.
+- [ ] Realtime UDP.
+- [ ] Live data.
+- [ ] Response parsing.
