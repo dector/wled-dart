@@ -8,6 +8,9 @@ environment:
 
 # Add regular dependencies here.
 dependencies:
+  equatable: ^2.0.5
+  xml: ^6.5.0
+  # meta: ^1.11.0
   # path: ^1.8.0
 
 dev_dependencies:

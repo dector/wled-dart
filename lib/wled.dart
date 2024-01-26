@@ -1,4 +1,7 @@
+import 'dart:convert';
 import 'dart:io' show HttpClient, HttpClientResponse;
+
+import 'package:wled/status.dart';
 
 /// Use this class to send commands to WLED instance.
 ///
@@ -30,6 +33,14 @@ class Wled {
   /// Toggle LED.
   Future<void> toggle() async {
     await _request([_Op.toggle]);
+  }
+
+  /// Get WLED status.
+  Future<WledStatus> status() async {
+    final resp = await _request([]);
+    final body = await resp.transform(utf8.decoder).join();
+
+    return WledStatus.fromXml(body);
   }
 
   Future<HttpClientResponse> _request(List<_Op> operations) async {
