@@ -1,4 +1,4 @@
-name: wled_dart
+name: wled
 description: WLED HTTP API for Dart
 version: 0.0.1
 repository: https://github.com/dector/wled-dart
