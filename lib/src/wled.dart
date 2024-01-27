@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io' show HttpClient, HttpClientResponse;
 
 import 'status.dart';
+import 'color.dart';
 
 /// Use this class to send commands to WLED instance.
 ///
@@ -43,8 +44,21 @@ class Wled {
     return WledStatus.fromXml(body);
   }
 
+  /// Set main color.
+  Future<void> color(Color color) async {
+    final r = color.r.clamp(0, 255);
+    final g = color.g.clamp(0, 255);
+    final b = color.b.clamp(0, 255);
+
+    await _internalRequest('&R=$r&G=$g&B=$b');
+  }
+
   Future<HttpClientResponse> _request(List<_Op> operations) async {
-    final path = '/win${operations.asParameters()}';
+    return _internalRequest(operations.asParameters());
+  }
+
+  Future<HttpClientResponse> _internalRequest(String params) async {
+    final path = '/win$params';
     final req = await _http.get(host, 80, path);
     final resp = await req.close();
 

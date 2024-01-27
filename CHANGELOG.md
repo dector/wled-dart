@@ -2,6 +2,7 @@
 
 ### New
 - Get current status.
+- Set primary color.
 
 ## [0.0.2] - 26 Jan 2024
 
