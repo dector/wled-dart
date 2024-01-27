@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:wled/status.dart';
 import 'package:wled/wled.dart';
 
 void main() async {

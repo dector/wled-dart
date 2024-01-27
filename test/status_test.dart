@@ -1,5 +1,5 @@
 import 'package:test/test.dart';
-import 'package:wled/status.dart';
+import 'package:wled/wled.dart';
 
 const xml = '''
 <?xml version="1.0" ?>
@@ -32,10 +32,10 @@ const xml = '''
 
 void main() {
   test('parse status', () {
-    expect(WledStatus.fromXml(xml), {
+    expect(WledStatus.fromXml(xml),
       WledStatus(
         brightness: 10,
       )
-    });
+    );
   });
 }
