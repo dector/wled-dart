@@ -26,8 +26,8 @@ await wled.toggle();
 - [x] Turn On.
 - [x] Turn Off.
 - [x] Toggle.
-- [ ] Brightness.
-- [ ] Change color.
+- [x] Brightness.
+- [x] Change color.
 - [ ] Effects.
 - [ ] Palette.
 - [ ] Nightlight.

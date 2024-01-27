@@ -3,6 +3,7 @@
 ### New
 - Get current status.
 - Set primary color.
+- Set brightness.
 
 ## [0.0.2] - 26 Jan 2024
 

@@ -53,6 +53,12 @@ class Wled {
     await _internalRequest('&R=$r&G=$g&B=$b');
   }
 
+  /// Set brightness (0-255).
+  Future<void> brightness(int value) async {
+    final newValue = value.clamp(0, 255);
+    await _internalRequest("&A=$newValue");
+  }
+
   Future<HttpClientResponse> _request(List<_Op> operations) async {
     return _internalRequest(operations.asParameters());
   }
