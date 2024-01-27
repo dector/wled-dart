@@ -1,4 +1,6 @@
-## [0.0.3] - SNAPSHOT
+## [0.0.4] - SNAPSHOT
+
+## [0.0.3] - 27 Jan 2024
 
 ### New
 - Get current status.
