@@ -1,4 +1,4 @@
-## [0.0.4] - SNAPSHOT
+## [0.0.4] - 07 Feb 2024
 
 ### New
 - Status response contains name.
