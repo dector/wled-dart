@@ -1,11 +1,13 @@
-import 'package:equatable/equatable.dart';
 import 'package:xml/xml.dart';
 
-class WledStatus extends Equatable {
-  WledStatus({required this.brightness});
-
+class WledStatus {
+  final String name;
   final int brightness;
-  // final int rgb;
+
+  WledStatus({
+    required this.name,
+    required this.brightness,
+  });
 
   bool get isOn => brightness > 0;
 
@@ -14,14 +16,26 @@ class WledStatus extends Equatable {
 
     final data = doc.getElement('vs')!;
     return WledStatus(
+      name: data.getElement('ds')?.innerText ?? '',
       brightness: int.tryParse(data.getElement('ac')!.innerText) ?? 0,
-      // rgb: int.tryParse()
     );
   }
 
   @override
-  List<Object> get props => [brightness];
+  String toString() => 'WLED[$name] { ' + 'brightness: $brightness ' + '}';
 
   @override
-  bool get stringify => true;
+  bool operator ==(Object other) {
+    if (other is! WledStatus) return false;
+    if (other.runtimeType != runtimeType) return false;
+    if (other.name != name) return false;
+    if (other.brightness != brightness) return false;
+
+    return true;
+  }
+
+  @override
+  int get hashCode {
+    return Object.hash(name, brightness);
+  }
 }

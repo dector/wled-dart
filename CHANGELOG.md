@@ -1,5 +1,8 @@
 ## [0.0.4] - SNAPSHOT
 
+### New
+- Status response contains name.
+
 ## [0.0.3] - 27 Jan 2024
 
 ### New

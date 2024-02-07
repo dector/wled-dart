@@ -41,6 +41,7 @@ class Wled {
     final resp = await _request([]);
     final body = await resp.transform(utf8.decoder).join();
 
+    // print(body);
     return WledStatus.fromXml(body);
   }
 
