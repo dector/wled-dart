@@ -34,6 +34,7 @@ void main() {
   test('parse status', () {
     expect(WledStatus.fromXml(xml),
       WledStatus(
+        name: 'WLED',
         brightness: 10,
       )
     );

@@ -10,7 +10,7 @@ import 'color.dart';
 /// and don't reuse connection between commands.
 /// Use it for one shot operations.
 class Wled {
-  /// Host
+  /// Host or IP
   final String host;
 
   late final HttpClient _http = HttpClient();
