@@ -19,15 +19,21 @@ final wled = Wled('localhost');
 final wled = Wled('127.0.0.1')
 
 await wled.toggle();
+
+final status = await wled.status();
+print('${wled.host} => isOn: ${status.isOn}');
 ```
 
 ## Operations
 
+**Implemented**: 
 - [x] Turn On.
 - [x] Turn Off.
 - [x] Toggle.
 - [x] Brightness.
 - [x] Change color.
+
+**Not implemented**:
 - [ ] Effects.
 - [ ] Palette.
 - [ ] Nightlight.
