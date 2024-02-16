@@ -13,13 +13,20 @@ class Wled {
   /// Host or IP
   final String host;
 
+  /// Connection port
+  final int port;
+
   late final HttpClient _http = HttpClient();
 
   /// Create new WLED control.
   ///
   /// [host] - is a hostname (e.g. `localhost`)
   /// or an IPv4 address (e.g. `192.168.1.123`).
-  Wled(this.host);
+  /// [port] - (optional) connection port.
+  Wled(
+    this.host, {
+    this.port = 80,
+  });
 
   /// Turn off LED.
   Future<void> turnOff() async {
@@ -66,7 +73,7 @@ class Wled {
 
   Future<HttpClientResponse> _internalRequest(String params) async {
     final path = '/win$params';
-    final req = await _http.get(host, 80, path);
+    final req = await _http.get(host, port, path);
     final resp = await req.close();
 
     return resp;
