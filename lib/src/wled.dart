@@ -20,12 +20,21 @@ class Wled {
 
   /// Create new WLED control.
   ///
-  /// [host] - is a hostname (e.g. `localhost`)
+  /// [address] - is a hostname (e.g. `localhost`)
   /// or an IPv4 address (e.g. `192.168.1.123`).
-  /// [port] - (optional) connection port.
-  Wled(
-    this.host, {
-    this.port = 80,
+  /// Might optionally contain port - e.g. `localhost:1234`.
+  factory Wled(String address) {
+    final (host, port) = _parseHostAndPort(address);
+
+    return Wled._(
+      host: host,
+      port: port ?? 80,
+    );
+  }
+
+  Wled._({
+    required this.host,
+    required this.port,
   });
 
   /// Turn off LED.
@@ -99,4 +108,21 @@ enum _Op {
 
   final String name;
   final String value;
+}
+
+(String, int?) _parseHostAndPort(String address) {
+  var ip = address;
+  int? port;
+
+  final index = address.indexOf(':');
+  if (index != -1) {
+    ip = address.substring(0, index);
+
+    if (index < address.length) {
+      final parsed = int.tryParse(address.substring(index + 1));
+      if (parsed != null) port = parsed;
+    }
+  }
+
+  return (ip, port);
 }

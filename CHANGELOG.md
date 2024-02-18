@@ -1,5 +1,12 @@
 ## [0.0.6] - SNAPSHOT
 
+### Breaking Changes
+- `Wled()` constructor accepts port as a part of the string address:
+e.g. `Wled('localhost:8080')`.
+
+## Removed
+- `port` parameter is removed from the `Wled()` constructor.
+
 
 ## [0.0.5] - 18 Feb 2024
 
