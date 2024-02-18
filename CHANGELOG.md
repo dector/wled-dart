@@ -1,7 +1,7 @@
-## [0.0.5] - SNAPSHOT
+## [0.0.5] - 18 Feb 2024
 
 ### New
-- Add ability to connect to WLED on different port.
+- Add ability to connect to WLED on a different port.
 
 
 ## [0.0.4] - 07 Feb 2024
