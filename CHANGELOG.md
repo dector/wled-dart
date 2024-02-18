@@ -1,4 +1,4 @@
-## [0.0.6] - SNAPSHOT
+## [0.0.6] - 18 Feb 2024
 
 ### Breaking Changes
 - `Wled()` constructor accepts port as a part of the string address:
